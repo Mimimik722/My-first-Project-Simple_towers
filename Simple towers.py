@@ -320,9 +320,9 @@ while True:
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         terminate()
-                    if event.type == pygame.MOUSEBUTTONDOWN and Money >= 20 + towers * 10:
+                    if event.type == pygame.MOUSEBUTTONDOWN:
                         x, y = event.pos
-                        if table[y // 50][x // 50] == 1:
+                        if table[y // 50][x // 50] == 1 and Money >= 20 + towers * 10:
                             Tower(x // 50, y // 50)
                             table[y // 50][x // 50] = 2
                             towers += 1
